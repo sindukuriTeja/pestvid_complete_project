@@ -1,0 +1,99 @@
+╔════════════════════════════════════════════════════════════════╗
+║           PESTVID PROJECT - QUICK REFERENCE                    ║
+╚════════════════════════════════════════════════════════════════╝
+
+🟢 SERVER STATUS: RUNNING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 SERVER URL
+   http://localhost:5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌐 WEB INTERFACE (EASIEST WAY TO TEST)
+   File: test_live.html
+   Action: Open in your web browser
+   Features: Beautiful UI with all endpoints
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📡 API ENDPOINTS
+
+1. Quick Tips
+   GET http://localhost:5000/quick-tips
+   
+2. AI Advice
+   POST http://localhost:5000/simple-ai-advice
+   Body: {"query": "your question"}
+   
+3. Crop Analysis
+   POST http://localhost:5000/analyze-description
+   Body: {"description": "crop issue description"}
+   
+4. Seasonal Advice
+   POST http://localhost:5000/seasonal-advice
+   Body: {"season": "spring", "crop": "tomato"}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 QUICK TESTS (PowerShell)
+
+# Get tips
+curl http://localhost:5000/quick-tips
+
+# Ask AI
+Invoke-RestMethod -Uri http://localhost:5000/simple-ai-advice `
+  -Method POST -ContentType "application/json" `
+  -Body '{"query": "How to grow tomatoes?"}'
+
+# Analyze crop
+Invoke-RestMethod -Uri http://localhost:5000/analyze-description `
+  -Method POST -ContentType "application/json" `
+  -Body '{"description": "Yellow leaves"}'
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🛑 STOP SERVER
+   Press Ctrl+C in the server terminal
+
+🔄 RESTART SERVER
+   python flask_server_simple.py
+   OR double-click: start_flask.bat
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTATION FILES
+   START_HERE.md         - Main guide
+   QUICK_START.md        - Quick reference
+   RUNNING_STATUS.md     - Current status
+   INDEX.md              - Documentation index
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ WORKING FEATURES
+   ✓ AI Agricultural Advice
+   ✓ Crop Problem Analysis
+   ✓ Seasonal Guidance
+   ✓ Quick Farming Tips
+   ✓ Pest Treatment Info
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 EXAMPLE QUERIES
+
+AI Advice:
+  - "How to prevent tomato blight?"
+  - "Best fertilizer for potatoes?"
+  - "Organic pest control methods?"
+
+Crop Analysis:
+  - "Yellow leaves with brown spots"
+  - "Wilting plants"
+  - "White powder on leaves"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 YOU'RE ALL SET!
+   Open test_live.html in your browser to start testing!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -1,0 +1,53 @@
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║              🌱 PESTVID PROJECT IS RUNNING! 🌱                 ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+
+🌐 OPEN THIS URL IN YOUR BROWSER:
+
+    👉  http://localhost:3000  👈
+
+
+✨ WHAT YOU'LL SEE:
+
+    • Beautiful login/signup page
+    • Full agricultural platform
+    • AI chatbot assistant
+    • Plant disease analysis
+    • Marketplace features
+    • And much more!
+
+
+🔑 TO GET STARTED:
+
+    1. Click "Sign up" on the login page
+    2. Choose your role (Farmer/Buyer/Investor)
+    3. Create an account
+    4. Explore the platform!
+
+
+🤖 AI FEATURES:
+
+    • AgriBot - Chat with AI assistant
+    • Plant Analysis - Disease detection
+    • Quick Tips - Farming advice
+    • Seasonal Guidance - Crop planning
+
+
+🛑 TO STOP THE SERVERS:
+
+    Press Ctrl+C in the terminal windows
+
+
+📚 NEED HELP?
+
+    Read: PROJECT_RUNNING.md
+
+
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║         ENJOY YOUR AGRICULTURAL PLATFORM! 🚜🌾                 ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝

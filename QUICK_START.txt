@@ -1,0 +1,111 @@
+================================================================================
+                    PestVid - Quick Start Guide
+================================================================================
+
+STEP 1: Test Model Loading
+---------------------------
+Run this command to verify both models load correctly:
+
+    python test_model_loading.py
+
+Expected output:
+    ✅ CLIP Model loaded successfully!
+    ✅ T2T Model loaded successfully!
+    🎉 SUCCESS! Both models loaded correctly.
+
+
+STEP 2: Start the Server
+-------------------------
+Option A (Windows - Recommended):
+    START_SERVER.bat
+
+Option B (Manual):
+    python flask_server_with_models.py
+
+Option C (Full features with RAG):
+    python flask_server.py
+
+
+STEP 3: Test the API
+--------------------
+Server will be available at: http://localhost:5000
+
+Health Check:
+    curl http://localhost:5000/health
+
+Quick Tips:
+    curl http://localhost:5000/quick-tips
+
+Disease Prediction (requires image):
+    curl -X POST -F "file=@your_image.jpg" http://localhost:5000/predict
+
+
+TROUBLESHOOTING
+---------------
+If models don't load:
+
+1. Check model files exist:
+   dir *.pth
+   
+   Should show:
+   - best_vlm_model.pth (721 MB)
+   - best_t2t_recommendation_model.pth (307 MB)
+
+2. Install dependencies:
+   pip install torch transformers pillow flask flask-cors python-dotenv
+
+3. Run diagnostic test:
+   python test_model_loading.py
+
+4. Read detailed guide:
+   MODEL_LOADING_GUIDE.md
+
+
+COMMON ERRORS
+-------------
+Error: "CLIP model file not found"
+Fix: Ensure best_vlm_model.pth is in the same directory
+
+Error: "T2T model file not found"
+Fix: Ensure best_t2t_recommendation_model.pth is in the same directory
+
+Error: "No module named 'torch'"
+Fix: pip install torch
+
+Error: "No module named 'transformers'"
+Fix: pip install transformers
+
+Error: KeyError or RuntimeError during loading
+Fix: This is now handled automatically - check error message for details
+
+
+FILES CREATED/MODIFIED
+----------------------
+✅ flask_server.py - Enhanced error handling
+✅ test_model_loading.py - Diagnostic test script
+✅ START_SERVER.bat - Automated startup script
+✅ MODEL_LOADING_GUIDE.md - Comprehensive guide
+✅ FIXES_APPLIED_MODEL_LOADING.md - Technical details
+✅ QUICK_START.txt - This file
+
+
+WHAT WAS FIXED
+--------------
+✅ Model loading now catches all exceptions (not just FileNotFoundError)
+✅ Clear error messages show exactly what went wrong
+✅ Variables properly initialized before loading
+✅ Status summary shows which models loaded successfully
+✅ Diagnostic tools help troubleshoot issues
+✅ Both checkpoint formats supported (dict with 'model' key or direct state dict)
+
+
+NEXT STEPS
+----------
+1. Run: python test_model_loading.py
+2. If successful, run: START_SERVER.bat
+3. Test with: curl http://localhost:5000/health
+4. Upload an image to: http://localhost:5000/predict
+
+For more details, see MODEL_LOADING_GUIDE.md
+
+================================================================================

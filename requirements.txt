@@ -1,0 +1,32 @@
+# Flask web framework
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# PyTorch and ML
+torch>=2.1.0
+transformers>=4.35.0
+pillow>=10.1.0
+numpy>=1.24.3
+
+# Environment
+python-dotenv>=1.0.0
+
+# LangChain ecosystem (updated for Python 3.14 compat)
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-cohere>=0.3.0
+langchain-pinecone>=0.2.0
+langchain-groq>=0.2.0
+langgraph>=0.2.0
+
+# Vector store and embeddings
+pinecone-client>=3.0.0
+
+# Pydantic v2 (required for Python 3.14 compatibility)
+pydantic>=2.0.0
+
+# HTTP
+requests>=2.31.0
+
+# Type hints
+typing-extensions>=4.8.0

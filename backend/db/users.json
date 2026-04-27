@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1776832451986",
+    "name": "Test Farmer",
+    "email": "farmer@test.com",
+    "role": "farmer",
+    "password": "$2b$10$.7RiL2Welaxr.pdWa9NLAOHi1/MzGopieYwcqJZA7DtSF3bfGbF4y",
+    "phone": null,
+    "createdAt": "2026-04-22T04:34:11.986Z"
+  },
+  {
+    "id": "1776832807848",
+    "name": "tej",
+    "email": "fxs@gmail.com",
+    "role": "farmer",
+    "password": "$2b$10$jsT8jYWnNdw/QXaNGbUYMuCmF6nDl2r4REjEkUyaBBxq2gAmnvOya",
+    "phone": null,
+    "createdAt": "2026-04-22T04:40:07.848Z"
+  }
+]

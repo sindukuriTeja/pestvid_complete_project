@@ -1,0 +1,24 @@
+# Large AI Models
+*.pth
+best_t2t_recommendation_model.pth
+best_vlm_model.pth
+
+# Datasets
+Potato Leaf Disease Dataset in Uncontrolled Environment/
+
+# Node
+node_modules/
+
+# Secrets
+.env
+backend/.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store

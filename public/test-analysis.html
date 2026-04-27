@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Plant Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
+        .result { background: #f0f0f0; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .disease { font-size: 24px; font-weight: bold; color: #d32f2f; margin: 10px 0; }
+        .confidence { font-size: 18px; color: #1976d2; margin: 10px 0; }
+        button { background: #4caf50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #45a049; }
+        pre { background: #263238; color: #aed581; padding: 15px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🌱 Plant Disease Analysis Test</h1>
+    
+    <div>
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="analyzeImage()">Analyze Plant</button>
+    </div>
+
+    <div id="loading" style="display:none; margin: 20px 0;">
+        <p>⏳ Analyzing image...</p>
+    </div>
+
+    <div id="result" class="result" style="display:none;">
+        <h2>Analysis Results:</h2>
+        <div class="disease">Disease: <span id="diseaseName"></span></div>
+        <div class="confidence">Confidence: <span id="confidence"></span></div>
+        <div style="margin-top: 15px;">
+            <strong>Treatment:</strong>
+            <p id="treatment"></p>
+        </div>
+    </div>
+
+    <div id="rawResponse" style="display:none;">
+        <h3>Raw API Response:</h3>
+        <pre id="jsonResponse"></pre>
+    </div>
+
+    <script>
+        async function analyzeImage() {
+            const fileInput = document.getElementById('imageInput');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                alert('Please select an image first!');
+                return;
+            }
+
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('rawResponse').style.display = 'none';
+
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+
+                console.log('Sending request to Flask server...');
+                
+                const response = await fetch('http://localhost:5000/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                console.log('Response status:', response.status);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('Response received:', result);
+
+                // Hide loading
+                document.getElementById('loading').style.display = 'none';
+
+                // Display results
+                document.getElementById('diseaseName').textContent = result.disease || 'Unknown';
+                document.getElementById('confidence').textContent = result.confidence || 'N/A';
+                document.getElementById('treatment').textContent = result.recommendation || 'No recommendation';
+                document.getElementById('result').style.display = 'block';
+
+                // Show raw response
+                document.getElementById('jsonResponse').textContent = JSON.stringify(result, null, 2);
+                document.getElementById('rawResponse').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('loading').style.display = 'none';
+                alert('Error: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>

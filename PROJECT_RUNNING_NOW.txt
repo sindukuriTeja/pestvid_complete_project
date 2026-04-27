@@ -1,0 +1,88 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    ✅ YOUR PROJECT IS RUNNING!                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+BACKEND SERVER:
+   Status: ✅ RUNNING
+   Port: 3001
+   URL: http://localhost:3001
+   Database: JSON Files (simple, no setup!)
+   Terminal: 13
+
+FRONTEND SERVER:
+   Status: ✅ RUNNING
+   Port: 3000
+   URL: http://localhost:3000
+   Terminal: 14
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    OPEN YOUR APP NOW                                       ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Click this link or copy to browser:
+
+   👉 http://localhost:3000
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    TEST CREATE ACCOUNT                                     ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+1. Open: http://localhost:3000
+2. Click: "Create Account" button
+3. Fill in:
+   - Name: Your Name
+   - Email: your@email.com
+   - Role: Farmer (or Buyer/Investor)
+   - Password: password123
+   - Confirm Password: password123
+   - Check: "I agree to terms"
+4. Click: "Create Account"
+5. ✅ IT WILL WORK!
+
+Your account will be saved in: backend/db/users.json
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    WHAT'S WORKING                                          ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+✅ Backend API running
+✅ Frontend website running
+✅ User registration working
+✅ User login working
+✅ Data saving to JSON files
+✅ No database setup needed!
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    TO STOP SERVERS                                         ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Press Ctrl+C in the terminals where servers are running
+
+Or close the terminal windows
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    TO RESTART LATER                                        ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Terminal 1 - Backend:
+   cd PestVid-main/backend
+   node server-simple.js
+
+Terminal 2 - Frontend:
+   cd PestVid-main/public
+   python -m http.server 3000
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    YOUR DATA                                               ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+All data is saved in simple JSON files:
+   - backend/db/users.json (user accounts)
+   - backend/db/videos.json (videos)
+   - backend/db/listings.json (marketplace listings)
+
+You can open these files to see your data!
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  🎉 READY TO USE! Open http://localhost:3000 and test Create Account!    ║
+╚════════════════════════════════════════════════════════════════════════════╝
